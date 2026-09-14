@@ -23,7 +23,8 @@
             "who are you",
             "how old are you?",
             "what else can you do?",
-            "what should I upgrade next?"
+            "what should I upgrade next?",
+            "What is your age?"
         ],
         "responses": [
             "I don't know"
