@@ -1,0 +1,32 @@
+{
+    "greetings": {
+        "examples": [
+            "hello",
+            "hii",
+            "hi"
+        ],
+        "responses": [
+            "hi"
+        ]
+    },
+    "farewell": {
+        "examples": [
+            "bye"
+        ],
+        "responses": [
+            "bye"
+        ]
+    },
+    "question": {
+        "examples": [
+            "how are you?",
+            "who are you",
+            "how old are you?",
+            "what else can you do?",
+            "what should I upgrade next?"
+        ],
+        "responses": [
+            "I don't know"
+        ]
+    }
+}
