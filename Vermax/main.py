@@ -19,7 +19,20 @@ def loop():
 
     found = False
     for intention in memory:
-        if userInput in memory[intention]["examples"]:
+        for operator in memory["math"]["examples"]:
+            if operator in userInput:
+                found = True
+                print(f"Vermax: Your text has a {operator} operator. Do you want me to calculate?")
+                userResponse = input()
+                if userResponse in memory["agreement"]["examples"]:
+                    print("so you agree then")
+                elif userResponse in memory["disagreement"]["examples"]:
+                    print("so you disagree then")
+                break
+
+        if found:
+            break
+        elif userInput in memory[intention]["examples"]:
             found = True
             response = memory[intention]["responses"]
             if response:
@@ -33,20 +46,25 @@ def loop():
 
     if not found:
         # Add new message to memory
-        if "?" in userInput:
+        if userInput in memory["disregard"]["examples"]:
+            print(f"Vermax: {memory["disregard"]["responses"][0]}")
+        elif "?" in userInput:
             print("Vermax: idk how to reply to that, sorry ._.")
             memory["question"]["examples"].append(userInput)
         else:
             print(f"Vermax: what is {userInput}?")
             intention = input()
 
-            if intention in memory:
-                memory[intention]["examples"].append(userInput)
+            if intention in memory["disregard"]["examples"]:
+                print(f"Vermax: {memory["disregard"]["responses"][0]}")
             else:
-                memory[intention] = {"examples": {}, "responses": {}}
-                memory[intention]["examples"].append(userInput)
+                if intention in memory:
+                    memory[intention]["examples"].append(userInput)
+                else:
+                    memory[intention] = {"examples": {}, "responses": {}}
+                    memory[intention]["examples"].append(userInput)
 
-            print(f"Vermax: oki, {userInput} is {intention}")
+                print(f"Vermax: oki, {userInput} is {intention}")
 
     # Save to memory
     with open(MEMORY_FILE, "w") as file:

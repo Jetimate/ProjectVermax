@@ -3,7 +3,8 @@
         "examples": [
             "hello",
             "hii",
-            "hi"
+            "hi",
+            "hiiii"
         ],
         "responses": [
             "hi"
@@ -11,6 +12,7 @@
     },
     "farewell": {
         "examples": [
+            "bye",
             "bye"
         ],
         "responses": [
@@ -24,7 +26,53 @@
             "how old are you?",
             "what else can you do?",
             "what should I upgrade next?",
-            "What is your age?"
+            "What is your age?",
+            "if I call you vmax, will you be okay with that?",
+            "if I call you vmax, will you be okay with that?"
+        ],
+        "responses": [
+            "I don't know"
+        ]
+    },
+    "disregard": {
+        "examples": [
+            "never mind",
+            "never mind it",
+            "disregard it",
+            "forget it"
+        ],
+        "responses": [
+            "Alright"
+        ]
+    },
+    "agreement": {
+        "examples": [
+            "yes",
+            "of course",
+            "sure",
+            "yeah"
+        ],
+        "responses": [
+            "Alright, you agree"
+        ]
+    },
+    "disagreement": {
+        "examples": [
+            "no",
+            "do not",
+            "don't",
+            "nope"
+        ],
+        "responses": [
+            "Alright, you disagree"
+        ]
+    },
+    "math": {
+        "examples": [
+            "+",
+            "-",
+            "/",
+            "*"
         ],
         "responses": [
             "I don't know"
